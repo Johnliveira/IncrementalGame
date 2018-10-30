@@ -1,24 +1,27 @@
-
+	
 	body {
 		background-color:#FFF
 	}
 
 	#column {
     	float: right;
-    	width: 33.33%;
+    	width: 10.90%;
 	}
 
-	/* Clear floats after the columns */
-	.row:after {
-    	content: "";
-    	display: table;
-    	clear: both;
+	#tudo {
+		width: 100%;
+		height: 992px;
+		background-image: url(img/Marcas2.png);
 	}
 
-	/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-	@media screen and (max-width: 600px) {
-    #columm {
-    	float: left;
-        width: 33.33%;
-    	}
+	#opacidade {
+		opacity: 0.5;
+	}
+
+	p{
+		color: #FF0000;
+	}
+
+	#normal{
+		
 	}
