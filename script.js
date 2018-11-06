@@ -4,40 +4,34 @@
 	var segundos= 0;
 	var minutos = 0; 
 
-	function clickIn() {
+	function clique() {
 		if (pontuacao == 0) {
 			setInterval(cronometro, 1000);
 		}
 		pontuacao += 1;
 		console.log(pontuacao);
-		document.getElementById("demo").innerHTML = "Rodas = " + pontuacao;
-		document.getElementById("imagemTroca").src = "img/Prin1.png";
+		document.getElementById("placar").innerHTML = "Rodas = " + pontuacao;
 		upgrades();
-		setTimeout(function() {  
-			document.getElementById("imagemTroca").src = "img/Prin.png"; 
-		}, 100);
-		var s = document.getElementById("sond"); 
-		s.play();
 	}
 
 
 	function somadora() {
 		pontuacao += 5;
-		document.getElementById("demo").innerHTML = "Rodas = " + pontuacao;
+		document.getElementById("placar").innerHTML = "Rodas = " + pontuacao;
 		console.log(pontuacao);
 	}
 
 	function upgrades() {
 		if (pontuacao == 20 && verifica[0] == false) {
-			document.getElementById("imagemTroca1").src = "img/Troca1.1.png";
+			document.getElementById("habilita1").src = "img/ImagemHabilitada1.png";
 			verifica[0] == true;
-			setInterval(clickIn, 20000);
+			setInterval(clique, 20000);
 		} else if (pontuacao == 50 && verifica[1] == false) {
-			document.getElementById("imagemTroca2").src = "img/Troca2.2.png";
+			document.getElementById("habilita2").src = "img/ImagemHabilitada2.png";
 			verifica[1] == true;
-			setInterval(clickIn, 1000);
+			setInterval(clique, 1000);
 		} else if(pontuacao == 70 && verifica[2] == false) {
-			document.getElementById("imagemTroca3").src = "img/Troca3.3.png";
+			document.getElementById("habilita3").src = "img/ImagemHabilitada3.png";
 			verifica[2] == true;
 			setInterval(somadora, 10000);
 		}
@@ -59,4 +53,13 @@
 		} else {
 	    	document.getElementById("tempo").innerHTML = minutos+":"+segundos;
 		}
+	}
+
+	function tocarSom() {
+		var s = document.getElementById("som"); 
+		s.play();
+		document.getElementById("habilitarPersonagem").src = "img/PersonagemHabilitado.png";
+		setTimeout(function() {  
+			document.getElementById("habilitarPersonagem").src = "img/PersonagemDesabilitado.png"; 
+		}, 100);
 	}
